@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@model IEnumerable<LazyLoadingMvc5.Models.Session>
+
+
+<h2>Sessions</h2>
+
+@foreach (var session in Model)
+{
+    <div class="row">
+        <h3>@session.Name</h3>
+        <h4>@string.Join(",", session.SpeakerSessions?.Select(ss => ss?.Speaker?.Name).ToArray())</h4>
+        <h4>@string.Join(",", session.SessionTags?.Select(st => st?.Tag?.Name).ToArray())</h4>
+        <p>@session.Description</p>
+    </div>
+}
