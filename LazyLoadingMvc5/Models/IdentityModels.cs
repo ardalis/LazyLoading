@@ -29,7 +29,6 @@ namespace LazyLoadingMvc5.Models
         public string Name { get; set; }
 
         public virtual List<SpeakerSession> SpeakerSessions { get; set; } = new List<SpeakerSession>();
-
     }
 
     public class SpeakerSession : BaseEntity
@@ -55,10 +54,10 @@ namespace LazyLoadingMvc5.Models
         public int TagId { get; set; }
         public virtual Tag Tag { get; set; }
     }
+
     public class Tag : BaseEntity
     {
         public string Name { get; set; }
         public virtual List<SessionTag> SessionTags { get; set; } = new List<SessionTag>();
-
     }
 }
